@@ -1,0 +1,12 @@
+<nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
+    <div class="container"><a class="navbar-brand" href="#">Reviews Database</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"></button>
+        <div class="collapse navbar-collapse" id="navcol-1"><a class="btn btn-primary ml-auto" role="button" href="#">Sign In</a>
+            <ul class="nav navbar-nav">
+                <li class="nav-item" role="presentation"><a class="nav-link active" [routerLink]="['/home']" routerLinkActive="router-link-active" >Home</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" [routerLink]="['/about']" routerLinkActive="router-link-active" >About</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" [routerLink]="['/contactus']" routerLinkActive="router-link-active" >Contact us</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<router-outlet></router-outlet>
