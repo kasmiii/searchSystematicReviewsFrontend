@@ -4,6 +4,6 @@ import { Result } from './result';
 export interface ResponseNormalSearch {
 
     search_info:SearchInfo;
-    results:Result[];
+    results:Array<Result>;
     
 }

@@ -1,0 +1,18 @@
+
+
+<div class="card" style="width: 50rem;">
+    <div class="card-body">
+      <h5 class="card-title">Title:        >>      {{title}}</h5>
+      <!--<h6 class="card-subtitle mb-2 text-muted">year      >>     {{year}}</h6>-->
+      
+      <p class="card-text">
+          <!--text here...-->
+          Year      >>     {{year}}<br>
+          Authors   >>     <b *ngFor="let author of authors">{{author}},</b><br>
+          Journal   >>     {{journal}}
+          Links     >>     <a [href]="links[0]">publisher</a> <a [href]="links[1]">epistemonikos</a> <a [href]="links[1]">pubmed</a>
+      </p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>

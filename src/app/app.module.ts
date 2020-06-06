@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ResultsComponent } from './results/results.component';
+import { SearchComponent } from './search/search.component';
+import { ReviewCardComponent } from './review-card/review-card.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ResultsComponent } from './results/results.component';
     HomeComponent,
     AboutComponent,
     ContactUsComponent,
-    ResultsComponent
+    ResultsComponent,
+    SearchComponent,
+    ReviewCardComponent
   ],
   imports: [
     BrowserModule,
