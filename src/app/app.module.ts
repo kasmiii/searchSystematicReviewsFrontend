@@ -13,6 +13,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ResultsComponent } from './results/results.component';
 import { SearchComponent } from './search/search.component';
 import { ReviewCardComponent } from './review-card/review-card.component';
+import { MostRelevantComponent } from './most-relevant/most-relevant.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ReviewCardComponent } from './review-card/review-card.component';
     ContactUsComponent,
     ResultsComponent,
     SearchComponent,
-    ReviewCardComponent
+    ReviewCardComponent,
+    MostRelevantComponent
   ],
   imports: [
     BrowserModule,

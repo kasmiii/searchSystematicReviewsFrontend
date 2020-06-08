@@ -1,1 +1,15 @@
-<p>search works!</p>
+<a [routerLink]="['/mostrelevant',{keyword:keyword}]" routerLinkActive="router-link-active" ><b class="align-bold">Most relevant</b></a>
+<div class="search-result">
+<h3 style="color: darkcyan;">Search results</h3>
+<h3>total results : {{response.search_info.total_hits}}</h3>
+<app-review-card *ngFor="let result of response.results"
+ [title]="result.title"
+ [authors]="result.authors"
+ [journal]="result.journal"
+ [links]="result.external_links"
+ [abstract]="result.abstract"
+ [year]="result.year"
+ [id_review]="result.id"
+ [keyword]="keyword"
+></app-review-card>
+</div>

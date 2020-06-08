@@ -13,16 +13,18 @@ export class SearchComponent implements OnInit {
 
 
   public response:ResponseNormalSearch;
-  
+  public keyword:string;
+  //public id_user:string=localStorage.getItem("id");
+
   constructor(private reviewService:ReviewService,private router:Router,private activatedRoute:ActivatedRoute) { }
 
   ngOnInit() {
 
     let group = this.activatedRoute.snapshot.paramMap.get('group');
     let year=this.activatedRoute.snapshot.paramMap.get('year');
-    let keyword=this.activatedRoute.snapshot.paramMap.get('keyword');
+    this.keyword=this.activatedRoute.snapshot.paramMap.get('keyword');
 
-    this.reviewService.getReviews(keyword,Number(year),group).subscribe(
+    this.reviewService.getReviews(this.keyword,Number(year),group).subscribe(
       (data)=> {
         this.response=data;
       console.log("total results reponse object is"+this.response.search_info.total_hits);
