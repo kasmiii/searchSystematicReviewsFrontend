@@ -17,7 +17,7 @@ export class ReviewService {
 
   constructor(private http:HttpClient) { }
 
-  getReviews(keyword:string,year:number,group:string):Observable<ResponseNormalSearch>{
+  getReviews(keyword:string,year:number,group:string,page:number):Observable<ResponseNormalSearch>{
     
     if(typeof group=='undefined'){
         group="";
@@ -26,9 +26,9 @@ export class ReviewService {
     if(typeof year=='undefined'){
       year=0;
     }
-    this.baseUrl+="reviews?keyword="+keyword+"&group="+group+"&year="+year;
+    let url="http://localhost:9099/reviews?keyword="+keyword+"&group="+group+"&year="+year+"&page="+page;
 
-    return this.http.get<ResponseNormalSearch>(this.baseUrl);
+    return this.http.get<ResponseNormalSearch>(url);
   }
 
   getAdvancedReviews(keyword:string,min_year:number,max_year:number):Observable<ResponseNormalSearch>{

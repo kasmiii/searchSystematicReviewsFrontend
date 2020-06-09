@@ -15,6 +15,6 @@
 </div>
 <ul class="nav nav-pills" style="margin-left: 150px;">
     <li *ngFor="let item of items" class="nav-item" style="margin-left: 10px;">
-      <a class="nav-link active"  routerLinkActive="router-link-active" (click)="navigateToPage(item)">{{item}}</a>
+      <a class="nav-link active" [routerLink]="['/search',{keyword:this.keyword,year:this.year,advancedSearch:'false',group:this.group,page:item}]" routerLinkActive="router-link-active" >{{item}}</a>
     </li>
 </ul>
