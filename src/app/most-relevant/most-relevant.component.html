@@ -1,1 +1,13 @@
-<p>most-relevant works!</p>
+<div class="search-result">
+<h3 style="color: darkcyan;">Most Relevants</h3>
+<!--<h3>total results : {{response.search_info.total_hits}}</h3>-->
+<app-review-card *ngFor="let result of listReviews"
+ [title]="result.content.title"
+ [authors]="result.content.authors"
+ [journal]="this.journal"
+ [links]="result.external_links"
+ [abstract]="result.content.abstract"
+ [year]="result.content.year"
+ [id_review]="result.id"
+></app-review-card>
+</div>

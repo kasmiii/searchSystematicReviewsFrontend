@@ -13,3 +13,8 @@
  [keyword]="keyword"
 ></app-review-card>
 </div>
+<ul class="nav nav-pills" style="margin-left: 150px;">
+    <li *ngFor="let item of items" class="nav-item" style="margin-left: 10px;">
+      <a class="nav-link active"  routerLinkActive="router-link-active" (click)="navigateToPage(item)">{{item}}</a>
+    </li>
+</ul>

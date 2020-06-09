@@ -12,22 +12,22 @@ import { RelevantReview } from '../model/relevant-review';
 export class MostRelevantComponent implements OnInit {
 
   public listReviews:Array<RelevantReview> = new Array();
+  public journal="Cochrane Library";
 
   constructor(private reviewService:ReviewService,private router:Router,private activatedRoute:ActivatedRoute) { }
 
   ngOnInit() {
     let keyword:string=this.activatedRoute.snapshot.paramMap.get('keyword');
     this.reviewService.getMostRelevantReviews(keyword).subscribe(
-      (data:RelevantReview)=>{
-        //this.listReviews.push(data);
-        this.listReviews.push(data);
-        console.log("citation is: "+this.listReviews[0].citation);
+      (data:Array<RelevantReview>)=>{
+        this.listReviews=data;
+        console.log("Citation number 0: "+this.listReviews[0].citation);
       }
     );
 
-    for(let i=0;i<this.listReviews.length;i++){
+    /*for(let i=0;i<this.listReviews.length;i++){
       //console.log("element:"+this.listReviews[i].content.abstract);      
-    }
+    }*/
   }
 
 }

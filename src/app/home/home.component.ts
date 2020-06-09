@@ -23,16 +23,24 @@ export class HomeComponent implements OnInit {
   toggleEditable(event:any){}
 
 advancedSearchIsChecked(event:any){
-  if (event.target.checked) document.getElementById("search_advance_section").style.display='block';
+  if (event.target.checked){
+    console.log("advabcedd search is checked...");
+    document.getElementById("search_advance_section").style.display='block';
+  } 
+  else{
     document.getElementById("search_advance_section").style.display='none';  
+  }
+    
 }
 
 onSubmitSearch(searchForm:NgForm){
 
   if(!searchForm.value.advanced_search){
-      this.router.navigate(['/search',{keyword:searchForm.value.keyword,year:searchForm.value.year,sort:searchForm.value.sort}])
+      this.router.navigate(['/search',{keyword:searchForm.value.keyword,year:searchForm.value.year,sort:searchForm.value.sort,advancedSearch:"false",group:searchForm.value.group}])
   }
-  else{}
+  else{
+    this.router.navigate(['/search',{keyword:searchForm.value.keyword,min_year:searchForm.value.min_year,max_year:searchForm.value.max_year,advancedSearch:"true"}])
+  }
 
   //console.log(searchForm.value.keyword+"group:"+searchForm.value.group+"year "+searchForm.value.year+"advanced_search: "+searchForm.value.advanced_search);
   

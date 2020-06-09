@@ -8,7 +8,6 @@
                 <li class="nav-item" role="presentation"><a class="nav-link active" [routerLink]="['/home']" routerLinkActive="router-link-active" >Home</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" [routerLink]="['/about']" routerLinkActive="router-link-active" >About</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" [routerLink]="['/contactus']" routerLinkActive="router-link-active" >Contact us</a></li>
-                <!--<b *ngIf="isConnected" style="margin-left: 50px;">{{email}}</b>-->
                 <div class="dropdown" *ngIf="isConnected" style="margin-right: 20px;">
                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                         <b>{{email}}</b>
