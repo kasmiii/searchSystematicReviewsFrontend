@@ -31,7 +31,7 @@ export class ReviewService {
     return this.http.get<ResponseNormalSearch>(url);
   }
 
-  getAdvancedReviews(keyword:string,min_year:number,max_year:number):Observable<ResponseNormalSearch>{
+  public getAdvancedReviews(keyword:string,min_year:number,max_year:number,exclude_cochrane:string):Observable<ResponseNormalSearch>{
 
     let baseUrlAdv="http://localhost:9099/advanccedsearch";
     if(typeof min_year=='undefined'){
@@ -41,17 +41,16 @@ export class ReviewService {
       max_year=0;
     }
 
-     let request:RequestParams=new RequestParams(keyword,min_year,max_year); 
+    let request:RequestParams=new RequestParams(keyword,min_year,max_year,exclude_cochrane); 
     const httpOptions = {
       headers: new HttpHeaders({
       'Content-Type':  'application/json'
       })
     };
-
     return this.http.post<ResponseNormalSearch>(baseUrlAdv,request,httpOptions);
   }
 
-  saveRelevance(relevant:Relevance):Observable<Relevance>{
+  public saveRelevance(relevant:Relevance):Observable<Relevance>{
     const httpOptions = {
       headers: new HttpHeaders({
       'Content-Type':  'application/json'

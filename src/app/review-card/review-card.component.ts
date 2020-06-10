@@ -10,8 +10,10 @@ import { Relevance } from '../model/prevelence';
   templateUrl: './review-card.component.html',
   styleUrls: ['./review-card.component.scss']
 })
+
 export class ReviewCardComponent implements OnInit {
 
+  @Input("advancedSearch")advancedSearch:boolean;
   @Input("title")title:string;
   @Input("year")year:number;
   @Input("authors")authors:string[];

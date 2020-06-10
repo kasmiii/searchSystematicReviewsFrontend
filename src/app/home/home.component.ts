@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
 
   public years=[1980,1981,1982,1983,1984,1985,1986,1987,1988,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020];
   public response:ResponseNormalSearch;
+  public excludeCochraneisChecked:string;
 
   constructor(private router:Router) { }
 
@@ -24,13 +25,21 @@ export class HomeComponent implements OnInit {
 
 advancedSearchIsChecked(event:any){
   if (event.target.checked){
-    console.log("advabcedd search is checked...");
+    console.log("advanced search is checked...");
     document.getElementById("search_advance_section").style.display='block';
   } 
   else{
-    document.getElementById("search_advance_section").style.display='none';  
+    console.log('advanced search is noooot checked...');
+    document.getElementById("search_advance_section").style.display='none';
   }
     
+}
+
+excludeCochraneIsChecked(event:any){
+  if(event.target.checked){
+    this.excludeCochraneisChecked="true";
+  }
+  else this.excludeCochraneisChecked="false";
 }
 
 onSubmitSearch(searchForm:NgForm){
@@ -39,7 +48,7 @@ onSubmitSearch(searchForm:NgForm){
       this.router.navigate(['/search',{keyword:searchForm.value.keyword,year:searchForm.value.year,sort:searchForm.value.sort,advancedSearch:"false",group:searchForm.value.group}])
   }
   else{
-    this.router.navigate(['/search',{keyword:searchForm.value.keyword,min_year:searchForm.value.min_year,max_year:searchForm.value.max_year,advancedSearch:"true"}])
+    this.router.navigate(['/search',{keyword:searchForm.value.keyword,min_year:searchForm.value.min_year,max_year:searchForm.value.max_year,advancedSearch:"true",exclude_cochrane:this.excludeCochraneisChecked}])
   }
 
   //console.log(searchForm.value.keyword+"group:"+searchForm.value.group+"year "+searchForm.value.year+"advanced_search: "+searchForm.value.advanced_search);
