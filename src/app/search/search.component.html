@@ -1,7 +1,8 @@
-<a [routerLink]="['/mostrelevant',{keyword:keyword}]" routerLinkActive="router-link-active" ><b class="align-bold">Most relevant</b></a>
+<a [routerLink]="['/mostrelevant',{keyword:keyword}]" routerLinkActive="router-link-active" style="margin-top: 300px;" ><b class="align-bold">Most relevant</b></a>
 <div class="search-result">
-<h3 style="color: darkcyan;">Search results</h3>
-<h3>total results : {{response.search_info.total_hits}}</h3>
+<h4 style="color: darkcyan;">Search results</h4>
+<b style="margin-top: 50px;">total results : {{response.search_info.total_hits}}</b><br>
+<b style="opacity: 0.5;">Result:{{this.page*10-10+1}}-{{this.page*10+10}} of {{response.search_info.total_hits}}</b>
 <app-review-card *ngFor="let result of response.results"
  [advancedSearch]="this.advSearch" 
  [title]="result.title"
@@ -14,19 +15,26 @@
  [keyword]="keyword"
 ></app-review-card>
 <!--ngSwitch-->
-
+<br>
 <div [ngSwitch]="this.advSearch">
   <ul class="nav nav-pills" style="margin-left: 150px;" *ngSwitchCase="false">
     <li *ngFor="let item of items" class="nav-item" style="margin-left: 10px;">
       <a class="nav-link active" [routerLink]="['/search',{keyword:this.keyword,year:this.year,advancedSearch:'false',group:this.group,page:item}]" routerLinkActive="router-link-active" >{{item}}</a>
+    </li>
+    <li class="nav-item" style="margin-left: 10px;">
+      <a class="nav-link active">>></a>
     </li>
   </ul>
 
   <ul class="nav nav-pills" style="margin-left: 150px;" *ngSwitchCase="true">
     <li *ngFor="let item of items" class="nav-item" style="margin-left: 10px;">
       <a class="nav-link active" [routerLink]="['/search',{keyword:this.keyword,min_year:this.min_year,max_year:this.max_year,advancedSearch:'true',exclude_cochrane:this.cochraneIsChecked}]" routerLinkActive="router-link-active" >{{item}}</a>
+      
+    </li>
+    <li class="nav-item" style="margin-left: 10px;">
+      <a class="nav-link active">>></a>
     </li>
   </ul>
 
 </div>
-
+<br>

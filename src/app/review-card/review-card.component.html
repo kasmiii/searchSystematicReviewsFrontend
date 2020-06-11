@@ -1,16 +1,14 @@
 
 <div class="card" style="width: 70rem;">
     <div class="card-body">
-      <h5 class="card-title">Title       >>      {{title}}</h5>
+      <h5 class="card-title text-primary">{{title}}</h5>
       <!--<h6 class="card-subtitle mb-2 text-muted">year      >>     {{year}}</h6>-->
       
       <p class="card-text">
           <!--text here...-->
-          Year      >>     {{year}}<br>
-          Authors   >>     <b *ngFor="let author of authors">{{author}},</b><br>
-          Journal   >>     {{journal}}<br>
-         
-          Links     >>     <a *ngIf="!advancedSearch" [href]="links.publisher">publisher</a>, <a *ngIf="!advancedSearch" [href]="links.epistemonikos">epistemonikos</a> ,<a *ngIf="!advancedSearch" [href]="links.pubmed">pubmed</a>
+          Year                    <b style="margin-left: 100px;">>></b>               <b>{{year}}</b><br>
+          Authors                 <b style="margin-left: 80px;">>></b>     <b *ngFor="let author of authors">{{author}},</b><br>
+          Links                   <b style="margin-left: 90px;">>></b>     <a *ngIf="!advancedSearch" [href]="links.publisher">publisher</a>, <a *ngIf="!advancedSearch" [href]="links.epistemonikos">epistemonikos</a> ,<a *ngIf="!advancedSearch" [href]="links.pubmed">pubmed</a>
         
       </p>
       <a class="card-link" href="#abstract-section"  data-toggle="collapse">show abstract</a>

@@ -3,7 +3,8 @@
     <div class="container">
         <div class="row">
             <div class="col-xl-9 mx-auto">
-                <h1 class="mb-5">Build a landing page for your business or project and generate more leads!</h1>
+                <img src="assets/img/searchReview.jpg" height="300px" width="800px" style="opacity: 0.3;">
+                <h3 class="mb-5" style="margin-top: 70px;">Combines the best of Evidence-Based Health Care, information technologies and a network of experts to provide a unique tool for people making decisions concerning clinical or health-policy questions.</h3>
             </div>
             <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
                 <form (ngSubmit)="onSubmitSearch(searchForm)" #searchForm="ngForm">
@@ -16,10 +17,10 @@
                         </div>
                     </div><br>
                     <div class="form-row">
-                        <label for="group_id">group</label>
+                        <label for="group_id"><h4>group</h4></label>
                         
                         <div>
-                            <select name="group" class="form-control" ngModel>
+                            <select name="group" class="form-control" style="margin-left: 40px;" ngModel>
                                     <option value="" selected>Group search</option>
                                     <option value="vpp">Patients Values and Preferences</option>
                                     <option value="health_systems">Health Systems</option>
@@ -31,26 +32,32 @@
                     </div><br>
 
                     <div class="form-row">
-                        <label for="sort_id">sort</label>
-                        <select name="year" class="form-control" ngModel>
+                        <label for="sort_id"><h4>sort</h4></label>
+                        <div>
+                        <select name="year" class="form-control" style="margin-left: 50px;" ngModel>
                             <option value="" selected>year</option>        
                             <option *ngFor="let year of years" [value]="year">{{year}}</option>
                         </select>
-                    </div>
+                        </div>
+                    </div><br><br>
 
+                <div style="margin-left: initial;">
                     <input type="checkbox" name="advanced_search" class="form-check-input" id="associator" (change)="advancedSearchIsChecked($event)" ngModel/>
-                    <label class="form-check-label" for="advanced_search_id" >Advanced search</label>
-                    
+                    <label class="form-check-label" for="advanced_search_id" ><h4>Advanced search</h4></label>
+                </div>
                     <div id="search_advance_section" style="display: none;">
                         <div class="form-row">
-                            <label for="min_year_id">Min year:</label>
-                            <input type="number" id="min_year_id" name="min_year" ngModel/>
-                            <label for="max_year_id">Max year:</label>
-                            <input type="number" id="max_year_id" name="max_year" ngModel/>
+                            <label for="min_year_id"><h4>Min year</h4></label>
+                            <input type="number" id="min_year_id" name="min_year" style="margin-left: 50px;" ngModel/>
                         </div>
-
+                        <br>
+                        <div class="form-row">
+                        <label for="max_year_id"><h4>Max year</h4></label>
+                        <input type="number" id="max_year_id" name="max_year" style="margin-left: 50px;" ngModel/>
+                        </div>
+                        <br>
                         <input type="checkbox" name="exclude_cochrane" class="form-check-input" id="exclude_cochrane_id" (change)="excludeCochraneIsChecked($event)" ngModel/>
-                    <label class="form-check-label" for="exclude_cochrane_id" >Exclude Cochrane</label>
+                    <label class="form-check-label" for="exclude_cochrane_id" ><h4>Exclude Cochrane</h4></label>
                     </div>
                 </form>
             </div>
@@ -135,49 +142,7 @@
         </div>
     </div>
 </section>
-<section class="call-to-action text-white text-center" style="background:url(&quot;assets/img/bg-masthead.jpg&quot;) no-repeat center center;background-size:cover;">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-9 mx-auto">
-                <h2 class="mb-4">Ready to get started? Sign up now!</h2>
-            </div>
-            <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-                <form>
-                    <div class="form-row">
-                        <div class="col-12 col-md-9 mb-2 mb-md-0"><input class="form-control form-control-lg" type="email" placeholder="Enter your email..."></div>
-                        <div class="col-12 col-md-3"><button class="btn btn-primary btn-block btn-lg" type="submit">Sign up!</button></div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-<footer class="footer bg-light">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 my-auto h-100 text-center text-lg-left">
-                <ul class="list-inline mb-2">
-                    <li class="list-inline-item"><a href="#">About</a></li>
-                    <li class="list-inline-item"><span>⋅</span></li>
-                    <li class="list-inline-item"><a href="#">Contact</a></li>
-                    <li class="list-inline-item"><span>⋅</span></li>
-                    <li class="list-inline-item"><a href="#">Terms of &nbsp;Use</a></li>
-                    <li class="list-inline-item"><span>⋅</span></li>
-                    <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
-                </ul>
-                <p class="text-muted small mb-4 mb-lg-0">© Brand 2018. All Rights Reserved.</p>
-            </div>
-            <div class="col-lg-6 my-auto h-100 text-center text-lg-right">
-                <ul class="list-inline mb-0">
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-facebook fa-2x fa-fw"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-twitter fa-2x fa-fw"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-instagram fa-2x fa-fw"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</footer>
+
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/bs-animation.js"></script>
